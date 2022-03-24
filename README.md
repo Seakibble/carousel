@@ -1,1 +1,1 @@
-# carousel-starter
+# carousel
