@@ -1,0 +1,87 @@
+body {
+    display: grid;
+    justify-content: center;
+}
+
+.carousel {
+    position: relative;
+
+    width: 1000px;
+    height: 600px;
+}
+
+.carousel__images {
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+.carousel__images img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+img.carousel--show {
+    opacity: 1;
+}
+
+.carousel__left,
+.carousel__right {
+    position: absolute;
+    z-index: 1;
+
+    height: 100%;
+    width: 80px;
+    font-size: 50px;
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.644);
+    cursor: pointer;
+    opacity: 0;
+
+    transition: opacity 0.2s;
+}
+
+.carousel__right {
+    right: 0;
+    top: 0
+}
+
+.carousel:hover .carousel__right,
+.carousel:hover .carousel__left {
+    opacity: 1;
+}
+
+.carousel__pips {
+    z-index: 1;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    grid-gap: 15px;
+}
+
+.carousel__pip {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 3px solid rgba(200, 200, 200, 1.0);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.501);
+    cursor: pointer;
+
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.carousel--active {
+    border-color: white;
+    background: #222;
+}
